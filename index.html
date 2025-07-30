@@ -1,461 +1,239 @@
+Você quer criar um site de filmes simples? Posso te ajudar com a estrutura básica de um site de filmes usando HTML, CSS e um pouco de JavaScript para interatividade. Vou te dar um exemplo bem básico, e você pode ir ajustando conforme suas necessidades.
+
+Aqui está um exemplo simples de como o código poderia ser:
+
+### Estrutura do Site (HTML):
+
+```html
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StreamHub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
+    <title>Site de Filmes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-900 text-white">
-    <header class="bg-gray-800 bg-opacity-90 sticky top-0 z-50 shadow-md">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-red-600">StreamHub</a>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-6">
-                    <li><a href="#inicio" class="hover:text-gray-300 transition duration-300">Início</a></li>
-                    <li><a href="#filmes" class="hover:text-gray-300 transition duration-300">Filmes</a></li>
-                    <li><a href="#series" class="hover:text-gray-300 transition duration-300">Séries</a></li>
-                    <li><a href="#animes" class="hover:text-gray-300 transition duration-300">Animes</a></li>
-                    <li><a href="#favoritos" class="hover:text-gray-300 transition duration-300">Favoritos</a></li>
-                </ul>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <input type="text" placeholder="Buscar..." class="bg-gray-700 rounded-full px-4 py-2 w-48 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-300">
-                <button class="bg-red-600 text-white rounded-full px-5 py-2 hover:bg-red-700 transition duration-300">Entrar</button>
-                 <div class="md:hidden">
-                    <button id="menu-mobile-button" class="text-gray-300 hover:text-white focus:outline-none focus:shadow-outline">
-                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Filmes Incríveis</h1>
         </div>
-         <div id="menu-mobile" class="hidden bg-gray-800 bg-opacity-90 md:hidden">
-            <div class="px-2 pt-2 pb-3 sm:px-3">
-                <ul class="space-y-1">
-                    <li><a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Início</a></li>
-                    <li><a href="#filmes" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Filmes</a></li>
-                    <li><a href="#series" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Séries</a></li>
-                     <li><a href="#animes" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Animes</a></li>
-                    <li><a href="#favoritos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Favoritos</a></li>
-                </ul>
-            </div>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#filmes">Filmes</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="inicio" class="bg-gradient-to-br from-gray-900 to-black py-16 md:py-24">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-6xl font-bold text-red-600 mb-4">Assista aos Melhores Filmes e Séries</h2>
-            <p class="text-lg text-gray-300 mb-8">Desfrute de uma experiência de streaming premium com conteúdo exclusivo e de alta qualidade.</p>
-            <button class="bg-red-600 text-white rounded-full px-8 py-3 text-lg hover:bg-red-700 transition duration-300">Assine Agora</button>
-        </div>
+    <section id="home" class="banner">
+        <h2>Bem-vindo ao mundo dos filmes!</h2>
     </section>
 
-    <section id="filmes" class="bg-gray-900 py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-white mb-6">Filmes Populares</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Filme 1" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Filme 1</h3>
-                        <p class="text-gray-400">Ação, Aventura</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Filme 2" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Filme 2</h3>
-                        <p class="text-gray-400">Comédia</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Filme 3" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Filme 3</h3>
-                        <p class="text-gray-400">Drama</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Filme 4" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Filme 4</h3>
-                        <p class="text-gray-400">Terror</p>
-                    </div>
-                </div>
-                 <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Filme 5" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Filme 5</h3>
-                        <p class="text-gray-400">Ficção Científica</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Filme 6" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Filme 6</h3>
-                        <p class="text-gray-400">Suspense</p>
-                    </div>
-                </div>
+    <section id="filmes" class="filmes">
+        <h2>Filmes em Destaque</h2>
+        <div class="lista-filmes">
+            <div class="filme">
+                <img src="https://via.placeholder.com/200x300" alt="Filme 1">
+                <h3>Filme 1</h3>
+                <p>Gênero: Ação</p>
+                <button>Assistir</button>
             </div>
-             <div class="mt-8 text-center">
-                <a href="#" class="text-red-600 hover:text-red-500 transition duration-300">Ver Todos os Filmes</a>
+            <div class="filme">
+                <img src="https://via.placeholder.com/200x300" alt="Filme 2">
+                <h3>Filme 2</h3>
+                <p>Gênero: Comédia</p>
+                <button>Assistir</button>
+            </div>
+            <div class="filme">
+                <img src="https://via.placeholder.com/200x300" alt="Filme 3">
+                <h3>Filme 3</h3>
+                <p>Gênero: Drama</p>
+                <button>Assistir</button>
             </div>
         </div>
     </section>
 
-    <section id="series" class="bg-gray-900 py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-white mb-6">Séries Populares</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Série 1" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Série 1</h3>
-                        <p class="text-gray-400">Drama, Romance</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Série 2" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Série 2</h3>
-                        <p class="text-gray-400">Comédia, Sitcom</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Série 3" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Série 3</h3>
-                        <p class="text-gray-400">Ação, Aventura</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Série 4" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Série 4</h3>
-                        <p class="text-gray-400">Mistério, Suspense</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 text-center">
-                <a href="#" class="text-red-600 hover:text-red-500 transition duration-300">Ver Todas as Séries</a>
-            </div>
-        </div>
+    <section id="contato" class="contato">
+        <h2>Entre em Contato</h2>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
     </section>
 
-    <section id="animes" class="bg-gray-900 py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-white mb-6">Animes Populares</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Anime 1" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Anime 1</h3>
-                        <p class="text-gray-400">Ação, Aventura</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Anime 2" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Anime 2</h3>
-                        <p class="text-gray-400">Comédia, Fantasia</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Anime 3" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Anime 3</h3>
-                        <p class="text-gray-400">Drama, Sci-Fi</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Anime 4" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Anime 4</h3>
-                        <p class="text-gray-400">Ação, Sobrenatural</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 text-center">
-                <a href="#" class="text-red-600 hover:text-red-500 transition duration-300">Ver Todos os Animes</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="favoritos" class="bg-gray-900 py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-white mb-6">Seus Favoritos</h2>
-            <p class="text-gray-400 text-center mb-8">
-                Marque os filmes e séries que você mais gosta para acessá-los rapidamente aqui.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-gray-800 rounded-lg shadow-md p-6 text-center">
-                    <h3 class="text-xl font-semibold text-white mb-2">Nenhum Favorito Adicionado</h3>
-                    <p class="text-gray-400">Adicione filmes e séries aos seus favoritos clicando no ícone de coração.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-gray-800 py-6">
-        <div class="container mx-auto px-4 text-center text-gray-400">
-            <p>&copy; 2024 StreamHub. Todos os direitos reservados.</p>
-            <p>Desenvolvido por [Seu Nome/Empresa]</p>
-        </div>
+    <footer>
+        <p>&copy; 2025 Filmes Incríveis. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        const menuMobileButton = document.getElementById('menu-mobile-button');
-        const menuMobile = document.getElementById('menu-mobile');
-
-        if (menuMobileButton && menuMobile) {
-            menuMobileButton.addEventListener('click', () => {
-                menuMobile.classList.toggle('hidden');
-            });
-        }
-
-        document.addEventListener('click', (event) => {
-            if (menuMobile && !menuMobile.classList.contains('hidden') && !menuMobile.contains(event.target) && event.target !== menuMobileButton) {
-                menuMobile.classList.add('hidden');
-            }
-        });
-    </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StreamHub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
-</head>
-<body class="bg-gray-900 text-white">
-    <header class="bg-gray-800 bg-opacity-90 sticky top-0 z-50 shadow-md">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-red-600">StreamHub</a>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-6">
-                    <li><a href="#inicio" class="hover:text-gray-300 transition duration-300">Início</a></li>
-                    <li><a href="#filmes" class="hover:text-gray-300 transition duration-300">Filmes</a></li>
-                    <li><a href="#series" class="hover:text-gray-300 transition duration-300">Séries</a></li>
-                    <li><a href="#animes" class="hover:text-gray-300 transition duration-300">Animes</a></li>
-                    <li><a href="#favoritos" class="hover:text-gray-300 transition duration-300">Favoritos</a></li>
-                </ul>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <input type="text" placeholder="Buscar..." class="bg-gray-700 rounded-full px-4 py-2 w-48 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-300">
-                <button class="bg-red-600 text-white rounded-full px-5 py-2 hover:bg-red-700 transition duration-300">Entrar</button>
-                 <div class="md:hidden">
-                    <button id="menu-mobile-button" class="text-gray-300 hover:text-white focus:outline-none focus:shadow-outline">
-                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-         <div id="menu-mobile" class="hidden bg-gray-800 bg-opacity-90 md:hidden">
-            <div class="px-2 pt-2 pb-3 sm:px-3">
-                <ul class="space-y-1">
-                    <li><a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Início</a></li>
-                    <li><a href="#filmes" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Filmes</a></li>
-                    <li><a href="#series" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Séries</a></li>
-                     <li><a href="#animes" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Animes</a></li>
-                    <li><a href="#favoritos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Favoritos</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-
-    <section id="inicio" class="bg-gradient-to-br from-gray-900 to-black py-16 md:py-24">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-6xl font-bold text-red-600 mb-4">Assista aos Melhores Filmes e Séries</h2>
-            <p class="text-lg text-gray-300 mb-8">Desfrute de uma experiência de streaming premium com conteúdo exclusivo e de alta qualidade.</p>
-            <button class="bg-red-600 text-white rounded-full px-8 py-3 text-lg hover:bg-red-700 transition duration-300">Assine Agora</button>
-        </div>
-    </section>
-
-    <section id="filmes" class="bg-gray-900 py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-white mb-6">Filmes Populares</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Filme 1" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Filme 1</h3>
-                        <p class="text-gray-400">Ação, Aventura</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Filme 2" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Filme 2</h3>
-                        <p class="text-gray-400">Comédia</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Filme 3" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Filme 3</h3>
-                        <p class="text-gray-400">Drama</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Filme 4" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Filme 4</h3>
-                        <p class="text-gray-400">Terror</p>
-                    </div>
-                </div>
-                 <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Filme 5" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Filme 5</h3>
-                        <p class="text-gray-400">Ficção Científica</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Filme 6" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Filme 6</h3>
-                        <p class="text-gray-400">Suspense</p>
-                    </div>
-                </div>
-            </div>
-             <div class="mt-8 text-center">
-                <a href="#" class="text-red-600 hover:text-red-500 transition duration-300">Ver Todos os Filmes</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="series" class="bg-gray-900 py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-white mb-6">Séries Populares</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Série 1" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Série 1</h3>
-                        <p class="text-gray-400">Drama, Romance</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Série 2" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Série 2</h3>
-                        <p class="text-gray-400">Comédia, Sitcom</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Série 3" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Série 3</h3>
-                        <p class="text-gray-400">Ação, Aventura</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Série 4" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Série 4</h3>
-                        <p class="text-gray-400">Mistério, Suspense</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 text-center">
-                <a href="#" class="text-red-600 hover:text-red-500 transition duration-300">Ver Todas as Séries</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="animes" class="bg-gray-900 py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-white mb-6">Animes Populares</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Anime 1" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Anime 1</h3>
-                        <p class="text-gray-400">Ação, Aventura</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Anime 2" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Anime 2</h3>
-                        <p class="text-gray-400">Comédia, Fantasia</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Anime 3" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Anime 3</h3>
-                        <p class="text-gray-400">Drama, Sci-Fi</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg hover:scale-105">
-                    <img src="https://via.placeholder.com/300x180" alt="Anime 4" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-white">Anime 4</h3>
-                        <p class="text-gray-400">Ação, Sobrenatural</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 text-center">
-                <a href="#" class="text-red-600 hover:text-red-500 transition duration-300">Ver Todos os Animes</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="favoritos" class="bg-gray-900 py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-white mb-6">Seus Favoritos</h2>
-            <p class="text-gray-400 text-center mb-8">
-                Marque os filmes e séries que você mais gosta para acessá-los rapidamente aqui.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-gray-800 rounded-lg shadow-md p-6 text-center">
-                    <h3 class="text-xl font-semibold text-white mb-2">Nenhum Favorito Adicionado</h3>
-                    <p class="text-gray-400">Adicione filmes e séries aos seus favoritos clicando no ícone de coração.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-gray-800 py-6">
-        <div class="container mx-auto px-4 text-center text-gray-400">
-            <p>&copy; 2024 StreamHub. Todos os direitos reservados.</p>
-            <p>Desenvolvido por [Seu Nome/Empresa]</p>
-        </div>
-    </footer>
-
-    <script>
-        const menuMobileButton = document.getElementById('menu-mobile-button');
-        const menuMobile = document.getElementById('menu-mobile');
-
-        if (menuMobileButton && menuMobile) {
-            menuMobileButton.addEventListener('click', () => {
-                menuMobile.classList.toggle('hidden');
-            });
-        }
-
-        document.addEventListener('click', (event) => {
-            if (menuMobile && !menuMobile.classList.contains('hidden') && !menuMobile.contains(event.target) && event.target !== menuMobileButton) {
-                menuMobile.classList.add('hidden');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+```
+
+### Estilos (CSS):
+
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header .logo h1 {
+    font-size: 24px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.banner {
+    background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.filmes {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.filmes h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.lista-filmes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.filme {
+    text-align: center;
+    width: 200px;
+}
+
+.filme img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.filme h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.filme p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.contato {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contato input, .contato textarea {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contato button {
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contato button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+```
+
+### Interatividade (JavaScript):
+
+```javascript
+// script.js
+
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll(".filme button");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            alert("Filme selecionado! Reproduzindo...");
+        });
+    });
+});
+```
+
